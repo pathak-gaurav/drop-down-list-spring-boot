@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>DropDownList</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<form action="#" th:action="@{/save}" method="post"  th:object="${country}">
+    <div class="container">
+        <div class="form-group blu-margin">
+            <select class="form-control" id="dropCountry" name="selectList">
+                <option value="0">select country</option>
+                <option th:each="c : ${country}" th:value="${c.id}" th:text="${c.countryName}"></option>
+            </select>
+        </div>
+        <input type="submit" value="Submit">
+    </div>
+</form>
+</body>
+</html>
